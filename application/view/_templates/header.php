@@ -28,16 +28,24 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>plugins/sweetalert2/sweetalert2.min.css">
     
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file://--> 
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
+        <?php
+              session_start();
+              $Email = $_SESSION["email"];
+              $UserName = $_SESSION["name"];
+
+                    if ($_SESSION["email"] != null) {
+                          
+                      }else 
+                      {
+                        header('location: ' . URL . 'Login');
+                      }
+          ?>
+
+<?php  if ($_SESSION["Rol"] == 3): ?>
   <!-- VENDEDOR (ROL 3) -->
-<!--   <body data-sidebar-color="sidebar-light" class="sidebar-light">
+  <body data-sidebar-color="sidebar-light" class="sidebar-light">
     <header style="background-color: #272972">
       <div class="search-bar closed">
         <form>
@@ -52,11 +60,24 @@
           </span><span id="inputSearchFor" class="sr-only">(default)</span>
         </div>
       </form>
-    </header> -->
+      <li class="dropdown visible-lg visible-md"><a id="dropdownMenu2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle header-icon lh-1 pt-15 pb-15">
+            <div class="media mt-0">
+              <div class="media-left avatar"><img src="data:image/jpeg;base64,<?php echo base64_encode($Fotico);?>" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+              <div class="media-right media-middle pl-0">
+                <p class="fs-12 mb-0">Hola, <?php $UserName ?> </p>
+              </div>
+            </div></a>
+          <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
+            <li><a href="<?php echo URL; ?>Perfil"><i class="ti-user mr-5"></i> Mi Perfíl</a></li>
+            <li><a href="<?php echo URL; ?>Configuracion"><i class="ti-settings mr-5"></i> Configuración</a></li>
+            <li><a href="<?php echo URL; ?>Login/salir"><i class="ti-power-off mr-5"></i> Salir</a></li>
+          </ul>
+        </li>
+    </header>
     <!-- Header end-->
-<!--     <div class="main-container"> -->
+     <div class="main-container">
       <!-- Main Sidebar start-->
-<!--       <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
+       <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
         <ul class="list-unstyled navigation mb-0">
           <li class="sidebar-category">Menu</li>
           
@@ -67,9 +88,8 @@
             <ul id="collapse7" class="list-unstyled collapse">
               
             </ul>
-          </li> -->
-
-<!--         <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed"><i class="ti-shopping-cart"></i><span class="sidebar-title">Products</span></a>
+          </li>
+         <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed"><i class="ti-shopping-cart"></i><span class="sidebar-title">Products</span></a>
             <ul id="collapse3" class="list-unstyled collapse">
               <li><a href="<?php echo URL; ?>Products">New product</a></li>
               <li><a href="<?php echo URL; ?>Products/TableProducts">Products list</a></li>
@@ -84,20 +104,18 @@
         </ul>
         
       </aside>
-    </div> -->
-
-
-
-
+    </div>
 
       <!-- Main Sidebar end-->
      <!--  <div class="page-container"> -->
 
         <!-- <div class="page-content container-fluid"> -->
 
+        <?php endif ?>
+
 <!-- ....................................................TERMINA VENDEDOR................................. -->
 
-  
+  <?php  if ($_SESSION["Rol"] == 5): ?>
   <!-- CLIENTE ROL(5) -->
   <body data-sidebar-color="sidebar-light" class="sidebar-light">
     <header style="background-color: #272972">
@@ -155,3 +173,4 @@
       <div class="page-container">
 
         <div class="page-content container-fluid">
+  <?php endif ?>
