@@ -25,6 +25,9 @@
 
 </div>
 
+</div>
+</div>
+
 <style type="text/css">
     .box {
         width: 800px;

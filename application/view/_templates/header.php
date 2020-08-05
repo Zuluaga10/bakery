@@ -227,7 +227,7 @@
        <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
         <ul class="list-unstyled navigation mb-0">
           
-          <li class="panel"><a href="<?php echo URL; ?>Home">Dashboard</a>
+          <li class="panel"><a href="<?php echo URL; ?>Home/Dashboard">Dashboard</a>
           </li>
           </li>
 
@@ -238,6 +238,6 @@
     <?php endif ?>
 
       <!-- Main Sidebar end-->
-       <div class="">
+       <div class="page-container">
 
         <div class="page-content container-fluid">
