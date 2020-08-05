@@ -37,6 +37,7 @@ class LoginController
           $resultado = $this->mdlLogin->logueo();
 // password_encrypt
           
+          
           if ($resultado != false) {
             
            $contrasenaE = md5($_POST['pass']);
@@ -53,12 +54,10 @@ class LoginController
                 $_SESSION["Rol"] = $resultado["UserTypeId"];
                 $_SESSION["name"] = $resultado["userUsername"];
                 $_SESSION["email"] = $resultado["userEmail"];
-                $_SESSION["document"] = $resultado["customerDocument"];
+                // $_SESSION["document"] = $resultado["customerDocument"];
 
                 
                 header("location: ".URL."home");
-
-
 
               }
               if ($resultado["UserTypeId"] == 3) {
@@ -66,8 +65,16 @@ class LoginController
                   $_SESSION["Rol"] = $resultado["UserTypeId"];
                   $_SESSION["name"] = $resultado["userUsername"];                  
                   $_SESSION["email"] = $resultado["userEmail"];
-                  $_SESSION["document"] = $resultado["sellerDocument"];
+                  // $_SESSION["document"] = $resultado["sellerDocument"];
                   
+                  header("location: ".URL."home");
+                }
+                if($resultado["UserTypeId"] == 2)
+                {
+                  session_start();
+                  $_SESSION["Rol"] = $resultado["UserTypeId"];
+                  $_SESSION["name"] = $resultado["userUsername"];                  
+                  $_SESSION["email"] = $resultado["userEmail"];
                   header("location: ".URL."home");
                 }
               }
