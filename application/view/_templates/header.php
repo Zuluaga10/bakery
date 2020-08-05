@@ -69,8 +69,6 @@
               </div>
             </div></a>
           <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
-            <li><a href="<?php echo URL; ?>Perfil"><i class="ti-user mr-5"></i> Mi Perfíl</a></li>
-            <li><a href="<?php echo URL; ?>Configuracion"><i class="ti-settings mr-5"></i> Configuración</a></li>
             <li><a href="<?php echo URL; ?>Login/salir"><i class="ti-power-off mr-5"></i> Salir</a></li>
           </ul>
         </li>
@@ -141,8 +139,6 @@
               </div>
             </div></a>
           <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
-            <li><a href="<?php echo URL; ?>Perfil"><i class="ti-user mr-5"></i> Mi Perfíl</a></li>
-            <li><a href="<?php echo URL; ?>Configuracion"><i class="ti-settings mr-5"></i> Configuración</a></li>
             <li><a href="<?php echo URL; ?>Login/salir"><i class="ti-power-off mr-5"></i> Salir</a></li>
           </ul>
         </li>
