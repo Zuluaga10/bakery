@@ -57,7 +57,7 @@
 
             axios.get('http://localhost:8000/api/getAllPendingOrdersByCustomer', {
                     params: {
-                        customerDocument: 32156324
+                        customerDocument: 123456987
                     }
                 })
                 .then(function(response) {
@@ -117,7 +117,7 @@
 
             axios.get('http://localhost:8000/api/getAllPendingOrdersByCustomerForPay', {
                     params: {
-                        customerDocument: 32156324
+                        customerDocument: 123456987
                     }
                 })
                 .then(function(response) {

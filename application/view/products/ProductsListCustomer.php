@@ -212,8 +212,10 @@
         }
 
         function confirmarPedido() {
+            var documentCus = 123456987
+            console.log(documentCus);
             axios.post('http://localhost:8000/api/orderCreationByUser', {
-                    customerDocument: 32156324,
+                    customerDocument: documentCus,
                     finalAmount: total
                 })
                 .then(function(response) {
