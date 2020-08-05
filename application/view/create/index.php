@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Create User</title>
     <!-- PACE-->
     <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>plugins/PACE/themes/blue/pace-theme-flash.css">
     <script type="text/javascript" src="<?php echo URL; ?>plugins/PACE/pace.min.js"></script>
@@ -20,28 +20,31 @@
     <![endif]-->
   </head>
   <body>
-  <div class="wrapper fadeInDown">
+    <div class="wrapper fadeInDown">
         <div id="formContent">
           <!-- Tabs Titles -->
-
           <!-- Icon -->
           <div class="fadeIn first">
-            <img src="<?php echo URL; ?>build/images/user-icon.png" id="icon" alt="User Icon" />
+            <img src="<?php echo URL; ?>build/images/create-icon.png" id="icon" alt="User Icon" style="width: 60px; height: 60px;" />
           </div>
 
           <!-- Login Form -->
-          <form method="POST" action="<?php echo URL; ?>Login/logueo" class="form-horizontal">
-            <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email">
-            <input type="text" id="password" class="fadeIn third" name="pass" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In" name="login" id="login">
+          <form method="POST" action="<?php echo URL; ?>CreateUser/createNewUser">
+            <input type="text" class="fadeIn second" name="username" placeholder="User name">
+            <input type="text" class="fadeIn third" name="document" placeholder="Document">
+            <input type="text" class="fadeIn third" name="address" placeholder="Address">
+            <input type="text" class="fadeIn third" name="phone" placeholder="Phone">
+            <label for="ddlStatus">Document type</label>
+                      <select class="form-control" name="documenttype">
+                       <option value=""></option>
+                       <?php foreach ($Datos as $value): ?>
+                        <option value="<?= $value['documentTypeId'];?>"><?= $value['documentTypeName'];?></option>
+                      <?php endforeach?>
+                      </select>
+            <input type="text" class="fadeIn third" name="email" placeholder="E-mail">
+            <input type="text" class="fadeIn third" name="pass" placeholder="Password">
+            <input type="submit" class="fadeIn fourth" value="Create user">
           </form>
-
-          <!-- Remind Password -->
-          <div id="formFooter">
-            <a href="<?php echo URL; ?>CreateUser">Create account</a>
-            <!-- <a class="underlineHover" href="<?php echo URL; ?>RestablecerClave">Forgot Password?</a> -->
-          </div>
-
         </div>
       </div>
     <!-- Scripts -->
