@@ -58,7 +58,6 @@ class LoginController
                 $_SESSION["name"] = $resultado["userUsername"];
                 $_SESSION["email"] = $resultado["userEmail"];
                 $_SESSION["document"] = $customer["customerDocument"];
-                return var_dump($customer["customerDocument"]);
 
                 
                 header("location: ".URL."home");
