@@ -66,7 +66,7 @@ class mdlLogin extends Model
 
          public function createCustomer()
          {
-            $sql = "CALL storeUser(?,?,?,?,?,?)";
+            $sql = "CALL storeCustomer(?,?,?,?,?,?)";
             $stm = $this->db->prepare($sql);
             $stm ->bindParam(1, $this->customerDocument);
             $stm ->bindParam(2, $this->userUsername);    
