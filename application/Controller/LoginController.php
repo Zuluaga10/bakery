@@ -51,13 +51,14 @@ class LoginController
               if ($resultado["UserTypeId"] == 5 ) {
 
                 $customer = $this->mdlLogin->getCustomer();
-                return var_dump($customer);
+                
                 
                 session_start();
                 $_SESSION["Rol"] = $resultado["UserTypeId"];
                 $_SESSION["name"] = $resultado["userUsername"];
                 $_SESSION["email"] = $resultado["userEmail"];
                 $_SESSION["document"] = $customer["customerDocument"];
+                return var_dump($customer["customerDocument"]);
 
                 
                 header("location: ".URL."home");
