@@ -169,9 +169,6 @@
 
           <li class="panel"><a href="<?php echo URL; ?>pay">Pay</a>
           </li>
-          
-          <li class="panel"><a href="<?php echo URL; ?>cart">Cart</a>
-          </li>
  
         
         </ul>
