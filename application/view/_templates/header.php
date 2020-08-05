@@ -163,11 +163,8 @@
             </ul>
           </li>
 
-        <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed"><i class="ti-shopping-cart"></i><span class="sidebar-title">Products</span></a>
-            <ul id="collapse3" class="list-unstyled collapse">
-              <li><a href="<?php echo URL; ?>Products/TableProductsCustomer">Products list</a></li>
-            </ul>
-          </li>
+      
+          <li><a href="<?php echo URL; ?>Products/TableProductsCustomer">Products</a></li>
 
 
           <li class="panel"><a href="<?php echo URL; ?>pay">Pay</a>
@@ -235,9 +232,10 @@
         
       </aside>
     </div>
-    <?php endif ?>
+    
 
       <!-- Main Sidebar end-->
        <div class="page-container">
 
         <div class="page-content container-fluid">
+        <?php endif ?>
