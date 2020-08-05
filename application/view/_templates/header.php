@@ -133,6 +133,19 @@
           </span><span id="inputSearchFor" class="sr-only">(default)</span>
         </div>
       </form>
+      <li class="dropdown visible-lg visible-md"><a id="dropdownMenu2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle header-icon lh-1 pt-15 pb-15">
+            <div class="media mt-0">
+              <div class="media-left avatar"><img src="data:image/jpeg;base64,<?php echo base64_encode($Fotico);?>" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+              <div class="media-right media-middle pl-0">
+                <p class="fs-12 mb-0">Hola, <?php echo $UserName; ?> </p>
+              </div>
+            </div></a>
+          <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
+            <li><a href="<?php echo URL; ?>Perfil"><i class="ti-user mr-5"></i> Mi Perfíl</a></li>
+            <li><a href="<?php echo URL; ?>Configuracion"><i class="ti-settings mr-5"></i> Configuración</a></li>
+            <li><a href="<?php echo URL; ?>Login/salir"><i class="ti-power-off mr-5"></i> Salir</a></li>
+          </ul>
+        </li>
     </header>
     <!-- Header end-->
     <div class="main-container">
@@ -180,7 +193,8 @@
 
 
 <!-- DUEÑO ROL(2) -->
-  <body data-sidebar-color="sidebar-light" class="sidebar-light">
+<?php  if ($_SESSION["Rol"] == 2): ?>
+ <body data-sidebar-color="sidebar-light" class="sidebar-light">
     <header style="background-color: #272972">
       <div class="search-bar closed">
         <form>
@@ -195,11 +209,22 @@
           </span><span id="inputSearchFor" class="sr-only">(default)</span>
         </div>
       </form>
+      <li class="dropdown visible-lg visible-md"><a id="dropdownMenu2" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle header-icon lh-1 pt-15 pb-15">
+            <div class="media mt-0">
+              <div class="media-left avatar"><img src="data:image/jpeg;base64,<?php echo base64_encode($Fotico);?>" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+              <div class="media-right media-middle pl-0">
+                <p class="fs-12 mb-0">Hola, <?php echo $UserName; ?> </p>
+              </div>
+            </div></a>
+          <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
+            <li><a href="<?php echo URL; ?>Login/salir"><i class="ti-power-off mr-5"></i> Salir</a></li>
+          </ul>
+        </li>
     </header>
     <!-- Header end-->
-    <div class="main-container">
+     <div class="main-container">
       <!-- Main Sidebar start-->
-      <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
+       <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
         <ul class="list-unstyled navigation mb-0">
           
           <li class="panel"><a href="<?php echo URL; ?>Home">Dashboard</a>
@@ -224,9 +249,9 @@
         
       </aside>
     </div>
-
+    <?php endif ?>
 
       <!-- Main Sidebar end-->
-      <div class="page-container">
+       <div class="page-container">
 
         <div class="page-content container-fluid">
