@@ -18,6 +18,14 @@ class OrdersController
         require APP . 'view/_templates/footer.php';
     }
 
+    public function Orders()
+    {
+
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/orders/OrdersSeller.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
     public function createOrder(){
         sleep(2);
 

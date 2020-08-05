@@ -1,70 +1,64 @@
 <div class="widget">
   <div class="widget-heading">
-              <h3 class="widget-title">Product List</h3>
-            </div>
-<div class="widget-body">
-                  <table id="myTable" cellspacing="0" width="100%" class="table table-hover dt-responsive nowrap">
-                    <thead>
-                      <tr>
-                    <th>PRODUCT NAME</th>
-                    <th>DESCRIPTION</th>
-                    <th>PRICE</th>
-                    <th>OPCIONES</th>
-                  </tr>
-                    </thead>
-                    
-                    <tbody>
-                     
-                  <tr>
+    <h3 class="widget-title">Product List</h3>
+  </div>
+  <div class="widget-body">
+    <table id="myTable" cellspacing="0" width="100%" class="table table-hover dt-responsive nowrap">
+      <thead>
+        <tr>
+          <th>PRODUCT NAME</th>
+          <th>DESCRIPTION</th>
+          <th>PRICE</th>
+          <th>OPCIONES</th>
+        </tr>
+      </thead>
 
-                  </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <script>
+      <tbody>
 
-                function listProducts()
-                {
+        <tr>
 
-                  axios.get('http://localhost:8000/api/products',   
-                  {
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  function listProducts() {
 
-                  })
-                  .then(function (response) 
-                  {
-                    var Response = response.data;
+    axios.get('http://localhost:8000/api/products', {
 
-                    Response.forEach(r => {
+      })
+      .then(function(response) {
+        var Response = response.data;
 
-                      var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+        Response.forEach(r => {
 
-                      // Insert a row in the table at row index 0
-                      var newRow   = tableRef.insertRow(tableRef.rows.length);
+          var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
 
-                      // Insert a cell in the row at index 0
-                      var newCell1  = newRow.insertCell(0);
-                      var newCell2  = newRow.insertCell(1);
-                      var newCell3  = newRow.insertCell(2);
-                      var newCell4  = newRow.insertCell(3);
-                      newCell1.innerHTML = r.productName;
-                      newCell2.innerHTML = r.productDescription;
-                      newCell3.innerHTML = r.productUnitPrice;
-                      newCell4.innerHTML = "<a href='<?php echo URL; ?>Products/edit/"+r.productId+"' type='button' class='btn btn-info' >Editar</a>";
-                      
-                    });
-                  
-                  })
-                  .catch(function (error) 
-                  {
-                    console.log(error);
-                  });
-                }
+          // Insert a row in the table at row index 0
+          var newRow = tableRef.insertRow(tableRef.rows.length);
 
-                // function editProducts(id)
-                // {
-                  
-                // }
-                window.onload=listProducts;
-          
-          </script>
+          // Insert a cell in the row at index 0
+          var newCell1 = newRow.insertCell(0);
+          var newCell2 = newRow.insertCell(1);
+          var newCell3 = newRow.insertCell(2);
+          var newCell4 = newRow.insertCell(3);
+          newCell1.innerHTML = r.productName;
+          newCell2.innerHTML = r.productDescription;
+          newCell3.innerHTML = r.productUnitPrice;
+          newCell4.innerHTML = "<a href='<?php echo URL; ?>Products/edit/" + r.productId + "' type='button' class='btn btn-info' >Editar</a>";
+
+        });
+
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
+  // function editProducts(id)
+  // {
+
+  // }
+  window.onload = listProducts;
+</script>

@@ -85,7 +85,7 @@
           <li class="panel"><a href="<?php echo URL; ?>Home">Home</a>
           </li>
 
-            <li class="panel"><a href="<?php echo URL; ?>Orders">Orders</a>
+            <li class="panel"><a href="<?php echo URL; ?>Orders/Orders">Orders</a>
             <ul id="collapse7" class="list-unstyled collapse">
               
             </ul>
@@ -108,9 +108,9 @@
     </div>
 
       <!-- Main Sidebar end-->
-     <!--  <div class="page-container"> -->
+      <div class="page-container">
 
-        <!-- <div class="page-content container-fluid"> -->
+        <div class="page-content container-fluid">
 
         <?php endif ?>
 
@@ -231,20 +231,6 @@
           </li>
           </li>
 
-        <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed"><i class="ti-shopping-cart"></i><span class="sidebar-title">Products</span></a>
-            <ul id="collapse3" class="list-unstyled collapse">
-              <li><a href="<?php echo URL; ?>Products/TableProductsCustomer">Products list</a></li>
-            </ul>
-          </li>
-
-
-          <li class="panel"><a href="<?php echo URL; ?>pay">Pay</a>
-          </li>
-          
-          <li class="panel"><a href="<?php echo URL; ?>cart">Cart</a>
-          </li>
- 
-        
         </ul>
         
       </aside>
@@ -252,6 +238,6 @@
     <?php endif ?>
 
       <!-- Main Sidebar end-->
-       <div class="page-container">
+       <div class="">
 
         <div class="page-content container-fluid">
