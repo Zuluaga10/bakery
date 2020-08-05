@@ -34,6 +34,7 @@
               session_start();
               $Email = $_SESSION["email"];
               $UserName = $_SESSION["name"];
+              $Document = $_SESSION["document"];
 
                     if ($_SESSION["email"] != null) {
                           
@@ -64,7 +65,7 @@
             <div class="media mt-0">
               <div class="media-left avatar"><img src="data:image/jpeg;base64,<?php echo base64_encode($Fotico);?>" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
               <div class="media-right media-middle pl-0">
-                <p class="fs-12 mb-0">Hola, <?php $UserName ?> </p>
+                <p class="fs-12 mb-0">Hola, <?php echo $UserName; ?> </p>
               </div>
             </div></a>
           <ul aria-labelledby="dropdownMenu2" class="dropdown-menu fs-12 animated fadeInDown">
@@ -174,3 +175,58 @@
 
         <div class="page-content container-fluid">
   <?php endif ?>
+
+<!-- ........................................FIN CLIENTE........................... -->
+
+
+<!-- DUEÑO ROL(2) -->
+  <body data-sidebar-color="sidebar-light" class="sidebar-light">
+    <header style="background-color: #272972">
+      <div class="search-bar closed">
+        <form>
+          <div class="input-group input-group-lg">
+            <input type="text" placeholder="Buscar por..." class="form-control"><span class="input-group-btn">
+              <button type="button" class="btn btn-default search-bar-toggle"><i class="ti-close"></i></button></span>
+          </div>
+        </form>
+      </div><a href="<?php echo URL; ?>Products" class="brand pull-left"><img src="<?php echo URL; ?>build/images/logo/111.png" width="150" height="64"></a><a href="javascript:;" role="button" class="hamburger-menu pull-left"><span></span></a>
+      <form class="search-form pull-left hidden-xs">
+        <div class="form-group has-feedback mb-0">
+          </span><span id="inputSearchFor" class="sr-only">(default)</span>
+        </div>
+      </form>
+    </header>
+    <!-- Header end-->
+    <div class="main-container">
+      <!-- Main Sidebar start-->
+      <aside style="background-image: url(<?php echo URL; ?>build/images/backgrounds/106.jpg)" class="main-sidebar mCustomScrollbar">
+        <ul class="list-unstyled navigation mb-0">
+          
+          <li class="panel"><a href="<?php echo URL; ?>Home">Dashboard</a>
+          </li>
+          </li>
+
+        <li class="panel"><a role="button" data-toggle="collapse" data-parent=".navigation" href="#collapse3" aria-expanded="false" aria-controls="collapse3" class="collapsed"><i class="ti-shopping-cart"></i><span class="sidebar-title">Products</span></a>
+            <ul id="collapse3" class="list-unstyled collapse">
+              <li><a href="<?php echo URL; ?>Products/TableProductsCustomer">Products list</a></li>
+            </ul>
+          </li>
+
+
+          <li class="panel"><a href="<?php echo URL; ?>pay">Pay</a>
+          </li>
+          
+          <li class="panel"><a href="<?php echo URL; ?>cart">Cart</a>
+          </li>
+ 
+        
+        </ul>
+        
+      </aside>
+    </div>
+
+
+      <!-- Main Sidebar end-->
+      <div class="page-container">
+
+        <div class="page-content container-fluid">

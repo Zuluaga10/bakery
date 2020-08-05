@@ -36,28 +36,41 @@ class LoginController
           $this->mdlLogin->__SET("userEmail",$_POST["email"]);
           $resultado = $this->mdlLogin->logueo();
 // password_encrypt
+          
           if ($resultado != false) {
+            
            $contrasenaE = md5($_POST['pass']);
             if ($resultado["userPassword"] == $contrasenaE ) {
-                
-              if ($resultado["UserTypeId"] == 5 ) {
+              
+              //Cliente
+              if(!$resultado["UserTypeId"])
+              {
 
+              }else{
+              if ($resultado["UserTypeId"] == 5 ) {
+                
                 session_start();
                 $_SESSION["Rol"] = $resultado["UserTypeId"];
                 $_SESSION["name"] = $resultado["userUsername"];
                 $_SESSION["email"] = $resultado["userEmail"];
+                $_SESSION["document"] = $resultado["customerDocument"];
+
                 
                 header("location: ".URL."home");
 
 
 
-              }else   if ($resultado["UserTypeId"] == 3) {
+              }
+              if ($resultado["UserTypeId"] == 3) {
                   session_start();
                   $_SESSION["Rol"] = $resultado["UserTypeId"];
                   $_SESSION["name"] = $resultado["userUsername"];                  
                   $_SESSION["email"] = $resultado["userEmail"];
+                  $_SESSION["document"] = $resultado["sellerDocument"];
+                  
                   header("location: ".URL."home");
                 }
+              }
 
             }else {
 
